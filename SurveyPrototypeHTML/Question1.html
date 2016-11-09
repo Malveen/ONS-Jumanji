@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<title>Test Survey</title>
+</head>
+
+<body>
+	<script>
+	var count = document.getElementsByName("counter")[0].value;
+	count
+	</script>
+  <div class="question">
+    <span class="errortext">This is a verbose description of the error</span>
+    <label>How many whole pounds are in your wallet?</label>
+    <div class="input-wrap symbol currency">
+      <input type="text" placeholder="e.g. 100" pattern="\d*" inputmode="numeric" maxlength="6" onclick="sendClick()" class="input numericentry">
+      <span class="hint">e.g. 100</span>
+    </div>
+    <div>
+      <a href="#" class="help-cta">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <span class="trigger-label">Show</span> help for this question
+	  </a>
+      <div class="help-text">
+        <p>Please enter the figure as per the guidance. If zero, enter 0</p>
+      </div>
+    </div>
+    <a href="Question2.html" class="submitButton">Submit</a>
+  </div>
+</body>
+
+</html>
