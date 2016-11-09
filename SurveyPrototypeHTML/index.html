@@ -27,7 +27,12 @@
   </script>
   <script>
     function questionFinish(){
-        ga('send', 'event', 'Question Complete', 'Continue', 'Question 1');
+        ga('send', 'event', {
+		eventCategory: 'Outbound Link',
+		eventAction: 'click',
+		eventLabel: 'Question 1',
+		transport: 'beacon'
+        });
     }
   </script>
 </body>
