@@ -6,18 +6,25 @@
   <script src="scripts/analytics.js"></script>
 </head>
 
-<body>
+<body onload="generateUserCode()">
   <div class="intro">
-		<label>Welcome to the test survey. Please answer a few simple questins.</label>
+		<label>Welcome to the test survey. Please answer a few simple questions.</label>
     <a href="Question1.html" class="startButton" onclick="questionFinish('Question1.html'); return false;">Start Survey</a>
   </div>
 
   <script>
+    function generateUserCode(){
+      var text = ""
+      var possible = "ABCDEFHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
-    var counter = 0;
+      for(var i=0; i<5; i++){
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+
+      sessionStorage.setItem('userId', text);
+      //document.write(text);
+    }
     function questionFinish(url){
-      counter = counter + 1;
-      sessionStorage.setItem('userId', counter);
 
 		if (window.performance) {
 			var timeSincePageLoad = Math.round(performance.now());
