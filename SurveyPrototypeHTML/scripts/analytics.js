@@ -40,3 +40,16 @@ function surveySubmit(url){
         });
 
 }
+
+function questionBack(url){
+
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, document.title);
+		}
+
+		ga('send', 'event', 'QuestionBack', 'click', url, {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+        });
+}
