@@ -34,14 +34,27 @@
         <p>Please enter the figure as per the guidance. If zero, enter 0</p>
       </div>
     </div>
-	<a href="Submission.html" class="submitButton">Submit</a>
+	<a href="Submission.html" class="submitButton" onclick="questionFinish('Submission.html')">Submit</a>
   </div>
 </body>
 
 <script>
-function CheckboxEvent() {
-    ga('send', 'event', 'Question5', 'Interacted');
-}
+  function CheckboxEvent() {
+	ga('send', 'event', 'CheckboxSelect', 'click', 'Question5');
+  }
+  function questionFinish(url){
+	
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'Question5');
+		}
+	
+		ga('send', 'event', 'QuestionFinish', 'click', 'Question5', {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+        });
+		
+    }
 </script>
 
 </html>

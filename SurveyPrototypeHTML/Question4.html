@@ -32,14 +32,27 @@
         <p>Please enter the figure as per the guidance. If zero, enter 0</p>
       </div>
     </div>
-	<a href="Question5.html" class="submitButton">Submit</a>
+	<a href="Question5.html" class="submitButton" onclick="questionFinish('Question5.html')">Submit</a>
   </div>
 </body>
 
 <script>
-function radioEvent() {
-    ga('send', 'event', 'Question4', 'Interacted');
-}
+  function radioEvent() {
+	ga('send', 'event', 'RadioSelect', 'click', 'Question4');
+  }
+  function questionFinish(url){
+	
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'Question4');
+		}
+	
+		ga('send', 'event', 'QuestionFinish', 'click', 'Question4', {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+        });
+		
+    }
 </script>
 
 </html>

@@ -30,8 +30,25 @@
         <p>Please enter the figure as per the guidance. If zero, enter 0</p>
       </div>
     </div>
-	<a href="Question3.html" class="submitButton">Submit</a>
+	<a href="Question3.html" class="submitButton" onclick="questionFinish('Question3.html')">Submit</a>
   </div>
+  
+  <script>
+    function questionFinish(url){
+	
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'Question2');
+		}
+	
+		ga('send', 'event', 'QuestionFinish', 'click', 'Question2', {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+        });
+		
+    }
+  </script>
+  
 </body>
 
 </html>

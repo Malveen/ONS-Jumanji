@@ -17,21 +17,20 @@
 <body>
   <div class="intro">
 		<label>Welcome to the test survey. Please answer a few simple questins.</label>
-    <a href="Question1.html?count=counter" class="startButton" onclick="startClick(); questionFinish()">Start Survey</a>
+    <a href="Question1.html" class="startButton" onclick="questionFinish('Question1.html')">Start Survey</a>
   </div>
-  
+
   <script>
-    function startClick(){
-		counter++;
-	}
-  </script>
-  <script>
-    function questionFinish(){
-        ga('send', 'event', {
-		eventCategory: 'Outbound Link',
-		eventAction: 'click',
-		eventLabel: 'Question 1',
-		transport: 'beacon'
+    function questionFinish(url){
+	
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'SurveyStart');
+		}
+	
+		ga('send', 'event', 'QuestionFinish', 'click', 'SurveyStart', {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
         });
     }
   </script>
