@@ -5,11 +5,18 @@
   <link rel="stylesheet" type="text/css" href="css/main.css" />
   <title>Question2</title>
   <script src="scripts/analytics.js"></script>
+  <script>
+      function returnUserId(){
+        userId = sessionStorage.getItem('userId');
+        return userId;
+      }
+  </script>
 </head>
 
 <body>
 	<h1>Question 2</h1>
   <div class="question">
+    <p>User ID:<script>document.write(returnUserId())</script></p>
     <span class="errortext">This is a verbose description of the error</span>
     <label>How many Euros do you take on holieday?</label>
   <div class="input-wrap symbol euro">
@@ -27,7 +34,7 @@
     <a href="Question1.html" class="submitButton" onclick="questionBack('Question1.html')">Back</a>
 	<a href="Question3.html" class="submitButton" onclick="questionFinish('Question3.html'); return false;">Submit</a>
   </div>
-  
+
 </body>
 
 </html>

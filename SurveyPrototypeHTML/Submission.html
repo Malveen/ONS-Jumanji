@@ -5,15 +5,22 @@
   <link rel="stylesheet" type="text/css" href="css/main.css" />
   <title>Submission</title>
   <script src="scripts/analytics.js"></script>
+  <script>
+      function returnUserId(){
+        userId = sessionStorage.getItem('userId');
+        return userId;
+      }
+  </script>
 </head>
 
 <body>
   <div class="question">
+    <p>User ID:<script>document.write(returnUserId())</script></p>
     <label>End of the survey</label>
     <a href="Question5.html" class="submitButton" onclick="questionBack('Question5.html')">Back</a>
 	<a href="Finished.html" class="submitButton" onclick="surveySubmit('Finished.html'); return false;">Submit Survey</a>
   </div>
-  
+
 </body>
 
 </html>

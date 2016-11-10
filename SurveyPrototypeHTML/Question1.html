@@ -4,15 +4,18 @@
   <link rel="stylesheet" type="text/css" href="css/main.css" />
   <title>Question1</title>
   <script src="scripts/analytics.js"></script>
+  <script>
+      function returnUserId(){
+        userId = sessionStorage.getItem('userId');
+        return userId;
+      }
+  </script>
 </head>
 
-<body>
+<body onload="getUserId()">
 	<h1>Question 1</h1>
-	<script>
-	var userId = sessionStorage.getItem('userId');
-  window.alert(userId);
-	</script>
   <div class="question">
+    <p>User ID:<script>document.write(returnUserId())</script></p>
     <span class="errortext">This is a verbose description of the error</span>
     <label>How many whole pounds are in your wallet?</label>
     <div class="input-wrap symbol currency">
