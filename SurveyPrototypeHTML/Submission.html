@@ -3,7 +3,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <title>Finished</title>
+  <title>Submission</title>
   <script src="scripts/analytics.js"></script>
 </head>
 
@@ -14,21 +14,5 @@
   </div>
   
 </body>
-
-<script>
-  function surveySubmit(url){
-	
-		if (window.performance) {
-			var timeSincePageLoad = Math.round(performance.now());
-			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'Submission');
-		}
-	
-		ga('send', 'event', 'SurveyFinish', 'click', 'Submission', {
-		'transport': 'beacon',
-		'hitCallback': function(){document.location = url;}
-        });
-
-    }
-</script>
 
 </html>

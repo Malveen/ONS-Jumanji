@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <title>Test Survey</title>
+  <title>Question1</title>
   <script src="scripts/analytics.js"></script>
 </head>
 
@@ -30,22 +30,6 @@
     </div>
     <a href="Question2.html" class="submitButton" onclick="questionFinish('Question2.html'); return false;">Submit</a>
   </div>
-
-  <script>
-    function questionFinish(url){
-
-		if (window.performance) {
-			var timeSincePageLoad = Math.round(performance.now());
-			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'Question1');
-		}
-
-		ga('send', 'event', 'QuestionFinish', 'click', 'Question1', {
-		'transport': 'beacon',
-		'hitCallback': function(){document.location = url;}
-        });
-
-    }
-  </script>
 
 </body>
 

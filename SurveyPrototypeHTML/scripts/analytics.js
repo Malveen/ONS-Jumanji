@@ -5,3 +5,38 @@
     ga('create', 'UA-86943591-4', 'auto');
     ga('send', 'pageview');
 	
+function questionFinish(url){
+
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, document.title);
+		}
+
+		ga('send', 'event', 'QuestionFinish', 'click', document.title, {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+        });
+
+}
+
+function radioEvent() {
+	ga('send', 'event', 'RadioSelect', 'click', 'Question4');
+}
+
+function CheckboxEvent() {
+	ga('send', 'event', 'CheckboxSelect', 'click', 'Question5');
+}
+
+function surveySubmit(url){
+	
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'Submission');
+		}
+	
+		ga('send', 'event', 'SurveyFinish', 'click', 'Submission', {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+        });
+
+}

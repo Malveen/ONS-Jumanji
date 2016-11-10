@@ -3,7 +3,7 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <title>Question 4</title>
+  <title>Question4</title>
   <script src="scripts/analytics.js"></script>
 </head>
 
@@ -28,25 +28,7 @@
     </div>
 	<a href="Question5.html" class="submitButton" onclick="questionFinish('Question5.html'); return false;">Submit</a>
   </div>
+  
 </body>
-
-<script>
-  function radioEvent() {
-	ga('send', 'event', 'RadioSelect', 'click', 'Question4');
-  }
-  function questionFinish(url){
-	
-		if (window.performance) {
-			var timeSincePageLoad = Math.round(performance.now());
-			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'Question4');
-		}
-	
-		ga('send', 'event', 'QuestionFinish', 'click', 'Question4', {
-		'transport': 'beacon',
-		'hitCallback': function(){document.location = url;}
-        });
-		
-    }
-</script>
 
 </html>
