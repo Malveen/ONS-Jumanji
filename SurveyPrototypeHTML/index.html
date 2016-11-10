@@ -10,7 +10,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
     ga('create', 'UA-86943591-4', 'auto');
     ga('send', 'pageview');
-	
+
   </script>
 </head>
 
@@ -21,13 +21,17 @@
   </div>
 
   <script>
+
+    var counter = 0;
     function questionFinish(url){
-	
+      counter = counter + 1;
+      sessionStorage.setItem('userId', counter);
+
 		if (window.performance) {
 			var timeSincePageLoad = Math.round(performance.now());
 			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'SurveyStart');
 		}
-	
+
 		ga('send', 'event', 'QuestionFinish', 'click', 'SurveyStart', {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
