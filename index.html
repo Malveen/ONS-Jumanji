@@ -17,7 +17,7 @@
   <script type="text/javascript">
     document.addEventListener("touchstart", function(){}, true);
   </script>
-  
+  <script src="scripts/analytics.js"></script>
 </head>
 
 <body>
@@ -78,7 +78,7 @@
               </div>
             </div>
           </div>
-          <button class="btn btn--quaternary qa-btn-get-started venus" type="submit" name="">Save and continue</button><br/><br/>
+          <button class="btn btn--quaternary qa-btn-get-started venus" type="submit" name="" onclick="login('../section-3.html')">Save and continue</button><br/><br/>
           <a class="mars" href="../">Previous</a>
         </form>
       </div>
@@ -88,25 +88,5 @@
   </div>
 </div>
 
-<script>
-
-$( document ).ready(function() {
-  if ($('.business-name').length > 0) {
-    var businessName = sessionStorage.getItem('Business name');
-    $('.business-name').html(businessName);
-  }
-  $('.qa-btn-get-started').click(function(e) {
-    e.preventDefault();
-    window.location.href = "../section-3.html";
-
-        var inputValue = $("input[name='1']").val();
-        sessionStorage.setItem('Invitation ID', inputValue);
-
-  });
-
-
-});
-
-</script>
 </body>
 </html>

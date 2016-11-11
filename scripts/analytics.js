@@ -6,3 +6,26 @@
   ga('create', 'UA-86943591-5', 'auto');
   ga('send', 'pageview');
 
+function login(url){
+
+	var inputValue = $("input[name='1']").val();
+    sessionStorage.setItem('Invitation ID', inputValue);
+
+	ga('send', 'event', 'Login', 'click', sessionStorage.getItem('InvitationID'), {
+	'transport': 'beacon',
+	'hitCallback': function(){document.location = url;}
+    });
+
+}
+
+function questionFinish(url){
+
+	var inputValue = $("input[name='1']").val();
+    sessionStorage.setItem('Invitation ID', inputValue);
+
+	ga('send', 'event', window.location.href, 'Finished', sessionStorage.getItem('InvitationID'), {
+	'transport': 'beacon',
+	'hitCallback': function(){document.location = url;}
+    });
+
+}
