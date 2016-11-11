@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <title>Test Survey</title>
+  <script src="scripts/analytics.js"></script>
+</head>
+
+<body onload="generateUserCode()">
+  <div class="intro">
+		<label>Welcome to the test survey. Please answer a few simple questions.</label>
+    <a href="Question1.html" class="startButton" onclick="questionFinish('Question1.html'); return false;">Start Survey</a>
+  </div>
+
+  <script>
+    function generateUserCode(){
+      var text = ""
+      var possible = "ABCDEFHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+
+      for(var i=0; i<5; i++){
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+
+      sessionStorage.setItem('userId', text);
+      //document.write(text);
+    }
+    function questionFinish(url){
+
+		if (window.performance) {
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'JS Dependencies', 'load', timeSincePageLoad, 'SurveyStart');
+		}
+
+		ga('send', 'event', 'QuestionFinish', 'click', 'SurveyStart', {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+        });
+    }
+  </script>
+</body>
+
+
+</html>
