@@ -11,7 +11,7 @@ function login(url){
 	var inputValue = $("input[name='1']").val();
     sessionStorage.setItem('Invitation ID', inputValue);
 
-	ga('send', 'event', 'Login', 'click', sessionStorage.getItem('InvitationID'), {
+	ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
 	'transport': 'beacon',
 	'hitCallback': function(){document.location = url;}
     });
@@ -20,10 +20,16 @@ function login(url){
 
 function questionFinish(url){
 
-	var inputValue = $("input[name='1']").val();
-    sessionStorage.setItem('Invitation ID', inputValue);
-
 	ga('send', 'event', window.location.href, 'Finished', sessionStorage.getItem('InvitationID'), {
+	'transport': 'beacon',
+	'hitCallback': function(){document.location = url;}
+    });
+
+}
+
+function surveySubmit(url){
+
+	ga('send', 'event', window.location.href, 'SurveyFinished', sessionStorage.getItem('InvitationID'), {
 	'transport': 'beacon',
 	'hitCallback': function(){document.location = url;}
     });
