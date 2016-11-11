@@ -38,7 +38,7 @@ function closeNav() {
     <span class="errortext">This is a verbose description of the error</span>
     <label>How many whole pounds are in your wallet?</label>
     <div class="input-wrap symbol currency">
-      <input type="text" placeholder="e.g. 100" pattern="\d*" inputmode="numeric" maxlength="6" onclick="sendClick()" class="input numericentry">
+      <input type="text" placeholder="e.g. 100" pattern="\d*" inputmode="numeric" maxlength="6" onclick="sendClick()" oninvalid="invalidInput()" class="input numericentry">
       <span class="hint">e.g. 100</span>
     </div>
     <div>

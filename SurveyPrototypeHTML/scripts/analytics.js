@@ -20,11 +20,15 @@ function questionFinish(url){
 }
 
 function radioEvent() {
-	ga('send', 'event', 'RadioSelect', 'click', 'Question4');
+	ga('send', 'event', 'RadioSelect', 'click', document.title);
+}
+
+function invalidInput() {
+	ga('send', 'event', 'InvalidInput', 'input', document.title);
 }
 
 function CheckboxEvent() {
-	ga('send', 'event', 'CheckboxSelect', 'click', 'Question5');
+	ga('send', 'event', 'CheckboxSelect', 'click', document.title);
 }
 
 function surveySubmit(url){
