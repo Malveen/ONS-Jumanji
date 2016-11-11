@@ -19,6 +19,10 @@ function questionFinish(url){
 
 }
 
+function textInteraction() {
+	ga('send', 'event', 'textInteraction', 'click', document.title);
+}
+
 function radioEvent() {
 	ga('send', 'event', 'RadioSelect', 'click', document.title);
 }
