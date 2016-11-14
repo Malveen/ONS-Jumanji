@@ -8,21 +8,26 @@
   
 function login(url){
 	
-	if(sessionStorage.getItem('loginTrack') === null){
-		var inputValue = $("input[name='1']").val();
-		sessionStorage.setItem('InvitationID', inputValue);
+	if($("input[name='1']").val()!=(1 || 2 || 3 || 4)){
+		
+		if(sessionStorage.getItem('loginTrack') === null){
+			var inputValue = $("input[name='1']").val();
+			sessionStorage.setItem('InvitationID', inputValue);
 	
-		sessionStorage.setItem('loginTrack', 1);
+			sessionStorage.setItem('loginTrack', 1);
 
-		ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
-		'transport': 'beacon',
-		'hitCallback': function(){document.location = url;}
-		});
+			ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
+			'transport': 'beacon',
+			'hitCallback': function(){document.location = url;}
+			});
+		}
+		else {
+			document.location = url;
+		}
 	}
 	else {
-		document.location = url;
+		window.alert("invalid input");
 	}
-
 }
 
 function surveyStart(url){
@@ -35,6 +40,9 @@ function surveyStart(url){
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
 		});
+	}
+	else {
+		document.location = url;
 	}
 
 }
@@ -62,6 +70,9 @@ function surveySubmit(url){
 		sessionStorage.setItem('startTrack', 1);
 
 		ga('send', 'event', window.location.href, 'SurveyFinished', sessionStorage.getItem('InvitationID'));
+	}
+	else {
+		document.location = url;
 	}
 
 }
