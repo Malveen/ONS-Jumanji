@@ -18,6 +18,15 @@ function login(url){
 
 }
 
+function surveyStart(url){
+
+	ga('send', 'event', window.location.href, 'surveyStart', sessionStorage.getItem('InvitationID'), {
+	'transport': 'beacon',
+	'hitCallback': function(){document.location = url;}
+    });
+
+}
+
 function questionFinish(url){
 
 	ga('send', 'event', window.location.href, 'Finished', sessionStorage.getItem('InvitationID'), {
