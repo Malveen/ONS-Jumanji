@@ -74,5 +74,8 @@ function surveySubmit(url){
 		'hitCallback': function(){document.location = url;}
 		});
 	}
+	else {
+		document.location = url;
+	}
 
 }
