@@ -49,10 +49,10 @@ function surveyStart(url){
 
 function questionFinish(url){
 	
-	if(sessionStorage.getItem('questionTrack') === null){
+	if(sessionStorage.getItem('questionTrack'+window.location.href) === null){
 	
-		sessionStorage.setItem('questionTrack', 1);
-
+		sessionStorage.setItem('questionTrack'+window.location.href, 1);
+		
 		ga('send', 'event', window.location.href, 'questionFinished', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
