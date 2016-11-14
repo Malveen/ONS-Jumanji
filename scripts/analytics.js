@@ -69,7 +69,10 @@ function surveySubmit(url){
 	
 		sessionStorage.setItem('startTrack', 1);
 
-		ga('send', 'event', window.location.href, 'SurveyFinished', sessionStorage.getItem('InvitationID'));
+		ga('send', 'event', window.location.href, 'surveyFinished', sessionStorage.getItem('InvitationID'), {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+		});
 	}
 
 }
