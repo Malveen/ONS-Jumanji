@@ -53,7 +53,7 @@ function questionFinish(url){
 	
 		sessionStorage.setItem('questionTrack', 1);
 
-		ga('send', 'event', window.location.href, 'Finished', sessionStorage.getItem('InvitationID'), {
+		ga('send', 'event', window.location.href, 'questionFinished', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
 		});
