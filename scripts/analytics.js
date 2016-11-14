@@ -65,9 +65,9 @@ function questionFinish(url){
 
 function surveySubmit(url){
 
-	if(sessionStorage.getItem('startTrack') === null){
+	if(sessionStorage.getItem('submitTrack') === null){
 	
-		sessionStorage.setItem('startTrack', 1);
+		sessionStorage.setItem('submitTrack', 1);
 
 		ga('send', 'event', window.location.href, 'surveyFinished', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
