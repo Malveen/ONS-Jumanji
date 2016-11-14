@@ -5,39 +5,58 @@
 
   ga('create', 'UA-86943591-5', 'auto');
   ga('send', 'pageview');
-
+  
 function login(url){
+	
+	if(sessionStorage.getItem('loginTrack') === null){
+		var inputValue = $("input[name='1']").val();
+		sessionStorage.setItem('InvitationID', inputValue);
+	
+		sessionStorage.setItem('loginTrack', 1);
 
-	var inputValue = $("input[name='1']").val();
-    sessionStorage.setItem('InvitationID', inputValue);
-
-	ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
-	'transport': 'beacon',
-	'hitCallback': function(){document.location = url;}
-    });
+		ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+		});
+	}
 
 }
 
 function surveyStart(url){
+	
+	if(sessionStorage.getItem('startTrack') === null){
+	
+		sessionStorage.setItem('startTrack', 1);
 
-	ga('send', 'event', window.location.href, 'surveyStart', 'InvitationID', {
-	'transport': 'beacon',
-	'hitCallback': function(){document.location = url;}
-    });
+		ga('send', 'event', window.location.href, 'surveyStart', sessionStorage.getItem('InvitationID'), {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+		});
+	}
 
 }
 
 function questionFinish(url){
+	
+	if(sessionStorage.getItem('questionTrack') === null){
+	
+		sessionStorage.setItem('questionTrack', 1);
 
-	ga('send', 'event', window.location.href, 'Finished', 'InvitationID', {
-	'transport': 'beacon',
-	'hitCallback': function(){document.location = url;}
-    });
+		ga('send', 'event', window.location.href, 'Finished', sessionStorage.getItem('InvitationID'), {
+		'transport': 'beacon',
+		'hitCallback': function(){document.location = url;}
+		});
+	}
 
 }
 
 function surveySubmit(url){
 
-	ga('send', 'event', window.location.href, 'SurveyFinished', 'InvitationID');
+	if(sessionStorage.getItem('startTrack') === null){
+	
+		sessionStorage.setItem('startTrack', 1);
+
+		ga('send', 'event', window.location.href, 'SurveyFinished', sessionStorage.getItem('InvitationID'));
+	}
 
 }
