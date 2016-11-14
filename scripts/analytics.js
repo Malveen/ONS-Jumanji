@@ -7,8 +7,8 @@
   ga('send', 'pageview');
   
 function login(url){
-	
-	if($("input[name='1']").val()==(1 || 2 || 3 || 4)){
+	var v = $("input[name='1']").val();
+	if( v==1 || v==2 || v==3 || v==4){
 		
 		if(sessionStorage.getItem('loginTrack') === null){
 			var inputValue = $("input[name='1']").val();
