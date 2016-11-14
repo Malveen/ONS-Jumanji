@@ -8,7 +8,7 @@
   
 function login(url){
 	
-	if($("input[name='1']").val()!=(1 || 2 || 3 || 4)){
+	if($("input[name='1']").val()==(1 || 2 || 3 || 4)){
 		
 		if(sessionStorage.getItem('loginTrack') === null){
 			var inputValue = $("input[name='1']").val();
