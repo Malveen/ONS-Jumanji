@@ -11,7 +11,7 @@ function login(url){
 	var inputValue = $("input[name='1']").val();
     sessionStorage.setItem('Invitation ID', inputValue);
 
-	ga('send', 'event', window.location.href, 'Login', 'InvitationID', {
+	ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
 	'transport': 'beacon',
 	'hitCallback': function(){document.location = url;}
     });
