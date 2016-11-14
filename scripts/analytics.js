@@ -71,8 +71,5 @@ function surveySubmit(url){
 
 		ga('send', 'event', window.location.href, 'SurveyFinished', sessionStorage.getItem('InvitationID'));
 	}
-	else {
-		document.location = url;
-	}
 
 }
