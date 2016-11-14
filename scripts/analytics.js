@@ -19,6 +19,9 @@ function login(url){
 		'hitCallback': function(){document.location = url;}
 		});
 	}
+	else {
+		document.location = url;
+	}
 
 }
 
