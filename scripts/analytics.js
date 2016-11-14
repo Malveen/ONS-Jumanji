@@ -11,7 +11,7 @@ function login(url){
 	var inputValue = $("input[name='1']").val();
     sessionStorage.setItem('Invitation ID', inputValue);
 
-	ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
+	ga('send', 'event', window.location.href, 'Login', 'InvitationID', {
 	'transport': 'beacon',
 	'hitCallback': function(){document.location = url;}
     });
@@ -20,7 +20,7 @@ function login(url){
 
 function surveyStart(url){
 
-	ga('send', 'event', window.location.href, 'surveyStart', sessionStorage.getItem('InvitationID'), {
+	ga('send', 'event', window.location.href, 'surveyStart', 'InvitationID', {
 	'transport': 'beacon',
 	'hitCallback': function(){document.location = url;}
     });
@@ -29,7 +29,7 @@ function surveyStart(url){
 
 function questionFinish(url){
 
-	ga('send', 'event', window.location.href, 'Finished', sessionStorage.getItem('InvitationID'), {
+	ga('send', 'event', window.location.href, 'Finished', 'InvitationID', {
 	'transport': 'beacon',
 	'hitCallback': function(){document.location = url;}
     });
@@ -38,9 +38,6 @@ function questionFinish(url){
 
 function surveySubmit(url){
 
-	ga('send', 'event', window.location.href, 'SurveyFinished', sessionStorage.getItem('InvitationID'), {
-	'transport': 'beacon',
-	'hitCallback': function(){document.location = url;}
-    });
+	ga('send', 'event', window.location.href, 'SurveyFinished', 'InvitationID');
 
 }
