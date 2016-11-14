@@ -34,9 +34,9 @@ function closeNav() {
     <span class="errortext">This is a verbose description of the error</span>
     <label>What is your gender?</label>
     <div class="">
-		<input type="radio" name="gender" value="male" onclick="radioEvent()"> Male<br>
-		<input type="radio" name="gender" value="female" onclick="radioEvent()"> Female<br>
-		<input type="radio" name="gender" value="other" onclick="radioEvent()"> Other
+		<input type="radio" id="radio1" name="gender" value="male" onclick="radioEvent()"> Male<br>
+		<input type="radio" id="radio2" name="gender" value="female" onclick="radioEvent()"> Female<br>
+		<input type="radio" id="radio3" name="gender" value="other" onclick="radioEvent()"> Other
     </div>
     <div>
       <a href="#" class="help-cta">
@@ -47,8 +47,8 @@ function closeNav() {
         <p>Please enter the figure as per the guidance. If zero, enter 0</p>
       </div>
     </div>
-    <a href="Question3.html" class="submitButton" onclick="questionBack('Question3.html')">Back</a>
-	<a href="Question5.html" class="submitButton" onclick="questionFinish('Question5.html'); return false;">Submit</a>
+    <a href="Question3.html" id ="question4Back" class="submitButton" onclick="questionBack('Question3.html')">Back</a>
+	<a href="Question5.html" id ="question4Submit" class="submitButton" onclick="questionFinish('Question5.html'); return false;">Submit</a>
   </div>
 
 </body>

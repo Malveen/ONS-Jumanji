@@ -34,11 +34,11 @@ function closeNav() {
     <span class="errortext">This is a verbose description of the error</span>
     <label>How do you travel to work?</label>
     <div class="">
-	  <input type="checkbox" name="travel" value="Bike" onclick="CheckboxEvent()"> Bike<br>
-	  <input type="checkbox" name="travel" value="Car" onclick="CheckboxEvent()"> My car<br>
-	  <input type="checkbox" name="travel" value="CarShare" onclick="CheckboxEvent()"> Car Share<br>
-	  <input type="checkbox" name="travel" value="CarShare" onclick="CheckboxEvent()"> Walk<br>
-	  <input type="checkbox" name="travel" value="CarShare" onclick="CheckboxEvent()"> Public Transport<br>
+	  <input type="checkbox" id="checkbox1" name="travel" value="Bike" onclick="CheckboxEvent()"> Bike<br>
+	  <input type="checkbox" id="checkbox2" name="travel" value="Car" onclick="CheckboxEvent()"> My car<br>
+	  <input type="checkbox" id="checkbox3" name="travel" value="CarShare" onclick="CheckboxEvent()"> Car Share<br>
+	  <input type="checkbox" id="checkbox4" name="travel" value="CarShare" onclick="CheckboxEvent()"> Walk<br>
+	  <input type="checkbox" id="checkbox5" name="travel" value="CarShare" onclick="CheckboxEvent()"> Public Transport<br>
     </div>
     <div>
       <a href="#" class="help-cta">
@@ -49,8 +49,8 @@ function closeNav() {
         <p>Please enter the figure as per the guidance. If zero, enter 0</p>
       </div>
     </div>
-    <a href="Question4.html" class="submitButton" onclick="questionBack('Question4.html')">Back</a>
-	<a href="Submission.html" class="submitButton" onclick="questionFinish('Submission.html'); return false;">Submit</a>
+    <a href="Question4.html" id ="question5Back" class="submitButton" onclick="questionBack('Question4.html')">Back</a>
+	<a href="Submission.html" id ="question5Submit" class="submitButton" onclick="questionFinish('Submission.html'); return false;">Submit</a>
   </div>
 
 </body>

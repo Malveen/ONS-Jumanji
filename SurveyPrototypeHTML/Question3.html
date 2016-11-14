@@ -34,7 +34,7 @@ function closeNav() {
     <span class="errortext">This is a verbose description of the error</span>
     <label>How much did you spend on lunch today?</label>
     <div class="input-wrap symbol currency">
-      <input type="text" placeholder="e.g. 100" pattern="\d*" inputmode="numeric" onclick="textInteraction()" oninvalid="invalidInput()"maxlength="6" class="input numericentry block">
+      <input type="text" id="question3Textbox" placeholder="e.g. 100" pattern="\d*" inputmode="numeric" onclick="textInteraction()" oninvalid="invalidInput()"maxlength="6" class="input numericentry block">
       <span class="hint">e.g. 100</span>
     </div>
     <div>
@@ -46,8 +46,8 @@ function closeNav() {
         <p>Please enter the figure as per the guidance. If zero, enter 0</p>
       </div>
     </div>
-    <a href="Question2.html" class="submitButton" onclick="questionBack('Question2.html')">Back</a>
-	<a href="Question4.html" class="submitButton" onclick="questionFinish('Question4.html'); return false;">Submit</a>
+    <a href="Question2.html" id="question3Back" class="submitButton" onclick="questionBack('Question2.html')">Back</a>
+	<a href="Question4.html" id ="question3Submit" class="submitButton" onclick="questionFinish('Question4.html'); return false;">Submit</a>
   </div>
 
 </body>
