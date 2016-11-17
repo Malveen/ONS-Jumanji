@@ -8,13 +8,18 @@
   
 function login(url){
 	var v = $("input[name='1']").val();
-	if( v==1 || v==2 || v==3 || v==4){
+	if( v==1 || v==2 || v==3 || v==4 ){
 		
 		if(sessionStorage.getItem('loginTrack') === null){
 			var inputValue = $("input[name='1']").val();
 			sessionStorage.setItem('InvitationID', inputValue);
 	
 			sessionStorage.setItem('loginTrack', 1);
+			
+			if (window.performance) {
+				var timeSincePageLoad = Math.round(performance.now());
+				ga('send', 'timing', window.location.href, 'Login', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+			}
 
 			ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
 			'transport': 'beacon',
@@ -36,6 +41,11 @@ function surveyStart(url){
 	
 		sessionStorage.setItem('startTrack', 1);
 
+		if (window.performance) {
+				var timeSincePageLoad = Math.round(performance.now());
+				ga('send', 'timing', window.location.href, 'surveyStart', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+			}
+		
 		ga('send', 'event', window.location.href, 'surveyStart', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
@@ -53,6 +63,11 @@ function questionFinish(url){
 	
 		sessionStorage.setItem('questionTrack'+window.location.href, 1);
 		
+		if (window.performance) {
+				var timeSincePageLoad = Math.round(performance.now());
+				ga('send', 'timing', window.location.href, 'question', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+			}
+		
 		ga('send', 'event', window.location.href, 'questionFinished', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
@@ -69,6 +84,11 @@ function surveySubmit(url){
 	
 		sessionStorage.setItem('submitTrack', 1);
 
+		if (window.performance) {
+				var timeSincePageLoad = Math.round(performance.now());
+				ga('send', 'timing', window.location.href, 'submission', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+			}
+		
 		ga('send', 'event', window.location.href, 'surveyFinished', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
