@@ -18,10 +18,10 @@ function login(url){
 			
 			if (window.performance) {
 				var timeSincePageLoad = Math.round(performance.now());
-				ga('send', 'timing', window.location.href, 'Login', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+				ga('send', 'timing', 'Login', 'Login', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
 			}
 
-			ga('send', 'event', window.location.href, 'Login', sessionStorage.getItem('InvitationID'), {
+			ga('send', 'event', 'Login', 'Login', sessionStorage.getItem('InvitationID'), {
 			'transport': 'beacon',
 			'hitCallback': function(){document.location = url;}
 			});
@@ -43,10 +43,10 @@ function surveyStart(url){
 
 		if (window.performance) {
 				var timeSincePageLoad = Math.round(performance.now());
-				ga('send', 'timing', window.location.href, 'surveyStart', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+				ga('send', 'timing', 'Start Survey', 'Start Survey', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
 			}
 		
-		ga('send', 'event', window.location.href, 'surveyStart', sessionStorage.getItem('InvitationID'), {
+		ga('send', 'event', 'Start Survey', 'Start Survey', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
 		});
@@ -57,7 +57,7 @@ function surveyStart(url){
 
 }
 
-function questionFinish(url){
+function questionFinish(url, num){
 	
 	if(sessionStorage.getItem('questionTrack'+window.location.href) === null){
 	
@@ -65,10 +65,10 @@ function questionFinish(url){
 		
 		if (window.performance) {
 				var timeSincePageLoad = Math.round(performance.now());
-				ga('send', 'timing', window.location.href, 'question', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+				ga('send', 'timing', 'Question Answered','Question '+num, timeSincePageLoad, sessionStorage.getItem('InvitationID'));
 			}
 		
-		ga('send', 'event', window.location.href, 'questionFinished', sessionStorage.getItem('InvitationID'), {
+		ga('send', 'event', 'Question Answered', 'Question '+num, sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
 		});
@@ -86,10 +86,10 @@ function surveySubmit(url){
 
 		if (window.performance) {
 				var timeSincePageLoad = Math.round(performance.now());
-				ga('send', 'timing', window.location.href, 'submission', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+				ga('send', 'timing', 'Submit', 'Submit', timeSincePageLoad, sessionStorage.getItem('InvitationID'));
 			}
 		
-		ga('send', 'event', window.location.href, 'surveyFinished', sessionStorage.getItem('InvitationID'), {
+		ga('send', 'event', 'Submit', 'Submit', sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
 		});
