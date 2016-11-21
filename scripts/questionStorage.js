@@ -1,5 +1,5 @@
 function checkboxResponse(Qnum, totInputs){
-	
+	//stores the response for checkbox question number Qnum in sessionStorage
 	var checked = false
 			
 	for(i=0;i<totInputs;i++){
@@ -16,7 +16,7 @@ function checkboxResponse(Qnum, totInputs){
 }
 
 function checkboxInit(Qnum, totInputs){
-	
+	//ticks question boxes that have previously been clicked in the session using sessionStorage
 	for(i=0;i<totInputs;i++){
 		
 		if(sessionStorage.getItem('Response'+Qnum+''+i) == 1){
@@ -27,14 +27,14 @@ function checkboxInit(Qnum, totInputs){
 }
 
 function textResponse(Qnum){
-		
+	//stores the response for text question number Qnum in sessionStorage
 	var n=document.getElementById('form-input-0').value;
 		
 	sessionStorage.setItem('Response'+Qnum, n);
 }
 
 function textInit(Qnum){
-	
+	//fills text box for question Qnum with previously entered data from sessionStorage
 	if(sessionStorage.getItem('Response'+Qnum) != null){
 			
 		document.getElementById('form-input-0').value = sessionStorage.getItem('Response'+Qnum);
