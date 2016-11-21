@@ -16,9 +16,10 @@
       document.addEventListener("touchstart", function(){}, true);
     </script>
     <script src="scripts/analytics.js"></script>
+	<script src="scripts/questionStorage.js"></script>
   </head>
 
-  <body>
+  <body onload="checkboxInit(2,2)">
     <div class="container">
       <div class="panel__header survey-header u-cf">
         <div class="logo survey-header__logo">
@@ -72,7 +73,7 @@
                   </div>
                 </div>
               </div>
-              <a href="question-3.html" id="moveQ3"class="submitButton" onclick="questionFinish('question-3.html', 2, 'radio', 2);return false;">Save and continue</a><br/><br/>
+              <a href="question-3.html" id="moveQ3"class="submitButton" onclick="checkboxResponse(2, 2);questionFinish('question-3.html', 2, 'radio', 2);return false;">Save and continue</a><br/><br/>
               <a class="mars" id="returnQ1"href="./question-1.html">Previous</a>
             </form>
           </div>
