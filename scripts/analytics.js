@@ -93,11 +93,15 @@ function textCheck(Qnum){
     
 	if (n.length < 1)
     {
-		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'));
+		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+			'hitCallback': function(){}
+		});
     }
 	else
 	{
-		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'));
+		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+			'hitCallback': function(){}
+		});
 	}
 
 }
@@ -115,11 +119,15 @@ function radioBoxCheck(Qnum, totInputs){
 	
 	if(checked)
 	{
-		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+			'hitCallback': function(){}
+		});
 	}
 	else
 	{
-		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+			'hitCallback': function(){}
+		});
 	}
 }
 
