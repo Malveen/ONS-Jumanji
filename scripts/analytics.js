@@ -57,16 +57,25 @@ function surveyStart(url){
 
 }
 
-function questionFinish(url, num){
+function questionFinish(url, Qnum, type, totInputs){
 	
 	if(sessionStorage.getItem('questionTrack'+window.location.href) === null){
 	
 		sessionStorage.setItem('questionTrack'+window.location.href, 1);
 		
 		if (window.performance) {
-				var timeSincePageLoad = Math.round(performance.now());
-				ga('send', 'timing', 'Question Answered','Question '+num, timeSincePageLoad, sessionStorage.getItem('InvitationID'));
-			}
+			var timeSincePageLoad = Math.round(performance.now());
+			ga('send', 'timing', 'Question Answered','Question '+Qnum, timeSincePageLoad, sessionStorage.getItem('InvitationID'));
+		}
+		
+		if(type == "text")
+		{
+			textCheck(Qnum);
+		}
+		else
+		{
+			radioBoxCheck(Qnum, totInputs);
+		}
 		
 		ga('send', 'event', 'Question Answered', 'Question '+num, sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
@@ -77,6 +86,43 @@ function questionFinish(url, num){
 		document.location = url;
 	}
 }
+
+function textCheck(Qnum){
+	
+	var n=document.getElementById('form-input-0').value;
+    
+	if (n.length < 1)
+    {
+		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+    }
+	else
+	{
+		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+	}
+
+}
+
+function radioBoxCheck(Qnum, totInputs){
+	var checked = false
+	
+	for(i=0;i<totInputs;i++)
+	{
+		if(document.getElementById('form-input-' + i).checked)
+		{
+			checked = true;
+		}
+	}
+	
+	if(checked)
+	{
+		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+	}
+	else
+	{
+		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+	}
+}
+
 
 function surveySubmit(url){
 
