@@ -25,3 +25,18 @@ function checkboxInit(Qnum, totInputs){
 		}
 	}	
 }
+
+function textResponse(Qnum){
+		
+	var n=document.getElementById('form-input-0').value;
+		
+	sessionStorage.setItem('Response'+Qnum) == n;
+}
+
+function textInit(Qnum){
+	
+	if(sessionStorage.getItem('Response'+Qnum) != null){
+			
+		document.getElementById('form-input-0').value = sessionStorage.getItem('Response'+Qnum);
+	}	
+}
