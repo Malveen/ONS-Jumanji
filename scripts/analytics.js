@@ -76,7 +76,7 @@ function questionFinish(url, Qnum, type, totInputs){
 		{
 			radioBoxCheck(Qnum, totInputs);
 		}
-		window.alert("I am here");
+
 		ga('send', 'event', 'Question Answered', 'Question '+num, sessionStorage.getItem('InvitationID'), {
 		'transport': 'beacon',
 		'hitCallback': function(){document.location = url;}
