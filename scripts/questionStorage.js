@@ -30,7 +30,7 @@ function textResponse(Qnum){
 		
 	var n=document.getElementById('form-input-0').value;
 		
-	sessionStorage.setItem('Response'+Qnum) == n;
+	sessionStorage.setItem('Response'+Qnum) = n;
 }
 
 function textInit(Qnum){
