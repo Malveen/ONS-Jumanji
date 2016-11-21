@@ -70,67 +70,56 @@ function questionFinish(url, Qnum, type, totInputs){
 		
 		if(type == "text")
 		{
-			textCheck(Qnum);
+			var n=document.getElementById('form-input-0').value;
+    
+			if (n.length < 1)
+			{
+				ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+					'transport': 'beacon',
+					'hitCallback': function(){document.location = url;}
+				});
+			}
+			else
+			{
+				ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+					'transport': 'beacon',
+					'hitCallback': function(){document.location = url;}
+				});
+			}
 		}
 		else
 		{
-			radioBoxCheck(Qnum, totInputs);
+			var checked = false
+			
+			for(i=0;i<totInputs;i++)
+			{
+				if(document.getElementById('form-input-' + i).checked)
+				{
+					checked = true;
+				}
+			}
+			
+			if(checked)
+			{
+				ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+					'transport': 'beacon',
+					'hitCallback': function(){document.location = url;}
+				});
+			}
+			else
+			{
+				ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
+					'transport': 'beacon',
+					'hitCallback': function(){document.location = url;}
+				});
+			}
 		}
 
-		ga('send', 'event', 'Question Answered', 'Question '+num, sessionStorage.getItem('InvitationID'), {
-		'transport': 'beacon',
-		'hitCallback': function(){document.location = url;}
-		});
 	}
 	else {
 		document.location = url;
 	}
 }
-
-function textCheck(Qnum){
-	
-	var n=document.getElementById('form-input-0').value;
-    
-	if (n.length < 1)
-    {
-		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
-			'hitCallback': function(){}
-		});
-    }
-	else
-	{
-		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
-			'hitCallback': function(){}
-		});
-	}
-
-}
-
-function radioBoxCheck(Qnum, totInputs){
-	var checked = false
-	
-	for(i=0;i<totInputs;i++)
-	{
-		if(document.getElementById('form-input-' + i).checked)
-		{
-			checked = true;
-		}
-	}
-	
-	if(checked)
-	{
-		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
-			'hitCallback': function(){}
-		});
-	}
-	else
-	{
-		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'), {
-			'hitCallback': function(){}
-		});
-	}
-}
-
 
 function surveySubmit(url){
 
