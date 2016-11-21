@@ -93,11 +93,11 @@ function textCheck(Qnum){
     
 	if (n.length < 1)
     {
-		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+		ga('send', 'event', 'Question Incomplete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'));
     }
 	else
 	{
-		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'))
+		ga('send', 'event', 'Question Complete', 'Question '+Qnum, sessionStorage.getItem('InvitationID'));
 	}
 
 }
