@@ -1,3 +1,4 @@
+  //this just initialises the google analytics functionality
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -7,6 +8,8 @@
   ga('send', 'pageview');
   
 function login(url){
+	//sets InvitationID to the survey type, sends timing for page and event with login details
+	
 	var v = $("input[name='1']").val();
 	if( v==1 || v==2 || v==3 || v==4 ){
 		
@@ -36,6 +39,7 @@ function login(url){
 }
 
 function surveyStart(url){
+	//sends timing information and surveyStart event
 	
 	if(sessionStorage.getItem('startTrack') === null){
 	
@@ -58,6 +62,7 @@ function surveyStart(url){
 }
 
 function questionFinish(url, Qnum, type, totInputs){
+	//sends timing information, event for if the question is completed or not
 	
 	if(sessionStorage.getItem('questionTrack'+window.location.href) === null){
 	
@@ -122,6 +127,7 @@ function questionFinish(url, Qnum, type, totInputs){
 }
 
 function surveySubmit(url){
+	//sends survey submis even and timing information
 
 	if(sessionStorage.getItem('submitTrack') === null){
 	
