@@ -101,6 +101,16 @@ h1 {
   text-weight: bold;
 }
 
+h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 a.submitButton {
     -webkit-appearance: button;
     -moz-appearance: button;
