@@ -112,6 +112,7 @@ a.submitButton {
 button.submitButton {
     -webkit-appearance: button;
     -moz-appearance: button;
+    -ms-appearance: button;
     padding: 13px 48px;
     color: #ffffff;
     text-decoration: none;
