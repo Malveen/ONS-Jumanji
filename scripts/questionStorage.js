@@ -3,13 +3,10 @@ function checkboxResponse(Qnum, totInputs){
 	var checked = false
 			
 	for(i=0;i<totInputs;i++){
-		
 		if(document.getElementById('form-input-' + i).checked){
-			
 			sessionStorage.setItem('Response'+Qnum+''+i, 1);
 		}
 		else{
-			
 			sessionStorage.setItem('Response'+Qnum+''+i, 0);
 		}
 	}
@@ -18,9 +15,7 @@ function checkboxResponse(Qnum, totInputs){
 function checkboxInit(Qnum, totInputs){
 	//ticks question boxes that have previously been clicked in the session using sessionStorage
 	for(i=0;i<totInputs;i++){
-		
 		if(sessionStorage.getItem('Response'+Qnum+''+i) == 1){
-			
 			document.getElementById('form-input-' + i).checked = true;
 		}
 	}	
@@ -36,7 +31,6 @@ function textResponse(Qnum){
 function textInit(Qnum){
 	//fills text box for question Qnum with previously entered data from sessionStorage
 	if(sessionStorage.getItem('Response'+Qnum) != null){
-			
 		document.getElementById('form-input-0').value = sessionStorage.getItem('Response'+Qnum);
 	}	
 }
