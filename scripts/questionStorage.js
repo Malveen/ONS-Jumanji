@@ -34,18 +34,18 @@ function textInit(Qnum){
 		document.getElementById('form-input-0').value = sessionStorage.getItem('Response'+Qnum);
 	}
 }
-
 function removeStorage(noInput){
-	for(int i=0;i<noInput;i++){
-		if(sessionStorage.getItem('Response1 ' + i) != null){
+	/*for(int i=0;i<4;i++){
+		if(sessionStorage.getItem('Response1' + i) != null){
 			sessionStorage.removeItem('Response1' + i);
 		}
+	}*/
+
+	if(sessionStorage.getItem('Response21') != null){
+		sessionStorage.removeItem('Response21');
 	}
-	if(sessionStorage.getItem('Response2 1') != null){
-		sessionStorage.removeItem('Response2 1');
-	}
-	if(sessionStorage.getItem('Response2 2') != null){
-		sessionStorage.removeItem('Response2 2');
+	if(sessionStorage.getItem('Response22') != null){
+		sessionStorage.removeItem('Response22');
 	}
 	if(sessionStorage.getItem('Response2 1') != null){
 		sessionStorage.removeItem('Response2 1');
