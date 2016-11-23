@@ -35,11 +35,11 @@ function textInit(Qnum){
 	}
 }
 function removeStorage(noInput){
-	/*for(int i=0;i<4;i++){
+	for(i=0;i<4;i++){
 		if(sessionStorage.getItem('Response1' + i) != null){
 			sessionStorage.removeItem('Response1' + i);
 		}
-	}*/
+	}
 
 	if(sessionStorage.getItem('Response21') != null){
 		sessionStorage.removeItem('Response21');
