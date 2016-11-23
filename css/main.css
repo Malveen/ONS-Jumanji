@@ -117,7 +117,7 @@ a.submitButton {
     padding: 13px 48px;
     color: #ffffff;
     text-decoration: none;
-    background-color: green;
+    background-color: #4CAF50;
 }
 button.submitButton {
     -webkit-appearance: button;
@@ -126,7 +126,7 @@ button.submitButton {
     padding: 13px 48px;
     color: #ffffff;
     text-decoration: none;
-    background-color: green;
+    background-color: #4CAF50;
 }
 
 #startSurvey {
