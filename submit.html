@@ -13,6 +13,7 @@
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:300,400,600,700,900'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css'>
     <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/questionStorage.js"></script>
     <script type="text/javascript">
       document.addEventListener("touchstart", function(){}, true);
     </script>
@@ -45,7 +46,7 @@
     </div>
     </div>
     </div>
-	
+
     <div class="container">
       <div class="grid ">
         <div class="grid__col col-8@s">
@@ -72,9 +73,9 @@
           </div>
         </div>
       </div>
-	  <button class="submitButton" onclick="surveySubmit('FinalPage.html');return false;">Submit Survey</button></br></br>
+	  <button class="submitButton" onclick="surveySubmit('FinalPage.html');return false; removeStorage(4); ">Submit Survey</button></br></br>
       <a class="mars" id="returnIndex"href="question-3.html">Previous</a>
 	</div>
-	
+
   </body>
 </html>
