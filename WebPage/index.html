@@ -12,6 +12,7 @@
     <link rel="alternate" type="application/rss+xml" title="eQ Prototypes" href="http://onsdigital.github.io/eq-prototypes/feed.xml">
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:300,400,600,700,900'>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css'>
+	<script src="scripts/data_transfer.js"></script>
   </head>
 
   <body>
@@ -56,7 +57,7 @@
                       <h3 class="question__title neptune"><span class="question__title__number venus">1</span>Overall Feedback For Survey</h3>
 					  
                       <div class="question__description">
-                        <p class='mars'>Give an overall rating for the survey:</p>
+                        <p class='mars'>Give your satisfaction:</p>
                       </div>
 					  
                       <div class="response response--checkbox">
@@ -181,7 +182,7 @@
                 </div>
               </div>
 			  
-			  <button class="submitButton">Save and continue</button>
+			  <button class="submitButton" onclick="sendData()">Save and continue</button>
 			  
 		    </form>
           </div>
