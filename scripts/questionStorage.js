@@ -35,6 +35,7 @@ function textInit(Qnum){
 	}
 }
 function removeStorage(noInput){
+ window.alert("done");
 	for(i=0;i<4;i++){
 		if(sessionStorage.getItem('Response1' + i) != null){
 			sessionStorage.removeItem('Response1' + i);
