@@ -97,7 +97,8 @@ html.prototypes-home h1 {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 27px;
+  color: green;
   text-weight: bold;
 }
 
