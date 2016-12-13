@@ -1,0 +1,19 @@
+{
+  "name": "webdriverio-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webdriverio": "^4.4.0"
+  },
+  "dependencies": {
+    "@types/webdriverio": "^4.0.32",
+    "uuid": "^3.0.1"
+  }
+}
