@@ -17,8 +17,64 @@
       document.addEventListener("touchstart", function(){}, true);
     </script>
     <script src="scripts/analytics.js"></script>
+    <script type="text/javascript" src="scripts/trial.js"></script>
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script>function getTrans()
+    {
+      var sValidCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var sCharCode = "";
+      var pDate = "09/11/2015";
+      var lDate = "12/11/2015";
+      var sID = "00003";
+
+      for (i = 0; i < 16; i++) {
+        sCharCode = sCharCode + sValidCharacters.charAt(parseInt(Math.random() * sValidCharacters.length));
+
+        if ((i === 3) || (i === 7) || (i === 11)) {
+          sCharCode = sCharCode + "-";
+        }
+      }
+      document.getElementById('para').innerHTML='Bi-annual Survey ID is ' + sID + "<br/>" + 'Live Date is ' + lDate + "<br/>" + 'Publish Date is: ' + pDate + "<br/>" + ' Survey Transaction ID is: ' + sCharCode;
+    }
+    </script>
+    <script>function getInfo()
+    {
+      var sValidCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var sCharCode = "";
+      var pDate = "09/11/2015";
+      var lDate = "12/11/2015";
+      var sID = "00004";
+
+      for (i = 0; i < 16; i++) {
+        sCharCode = sCharCode + sValidCharacters.charAt(parseInt(Math.random() * sValidCharacters.length));
+
+        if ((i === 3) || (i === 7) || (i === 11)) {
+          sCharCode = sCharCode + "-";
+        }
+      }
+      document.getElementById('quart').innerHTML='Quarterly Survey ID is ' + sID + "<br/>" + 'Live Date is ' + lDate + "<br/>" + 'Publish Date is: ' + pDate + "<br/>" + ' Survey Transaction ID is: ' + sCharCode;
+    }
+    </script>
+    <script>function getMonth()
+    {
+      var sValidCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      var sCharCode = "";
+      var pDate = "09/12/2016";
+      var lDate = "12/12/2016";
+      var sID = "00005";
+
+      for (i = 0; i < 16; i++) {
+        sCharCode = sCharCode + sValidCharacters.charAt(parseInt(Math.random() * sValidCharacters.length));
+
+        if ((i === 3) || (i === 7) || (i === 11)) {
+          sCharCode = sCharCode + "-";
+        }
+      }
+      document.getElementById('mont').innerHTML='Monthly Survey ID is ' + sID + "<br/>" + 'Live Date is ' + lDate + "<br/>" + 'Publish Date is: ' + pDate + "<br/>" + ' Survey Transaction ID is: ' + sCharCode;
+    }
+    </script>
   </head>
 
   <body>
@@ -52,14 +108,49 @@
           		<li>your experiences</li></ul>
             <h3 class='saturn'>Surveys</h2>
             <p class='mars'>Click one of the links below to start survey.</p><p class='mars'>
-            <p>TO DO:</p>
-            <p> <a id="link1" href="question-1.html">Survey one</a> </p>
-            <p> <a id="link2"href="question-1.html">Survey two</a> </p>
-            <p> <a id="link3" href="question-1.html">Survey three</a> </p>
-            <p> <a id="link4"href="question-1.html">Survey four</a> </p>
-          </div>
+            <p><strong>TO DO:</strong></p>
+            <p> <form method="get" target="_blank" action="question-1.html">
+                <button id="addbtn" onclick="getMonth();" type="submit">Monthly Survey</button>
+                </form> </p>
+            <p> <form method="get" target="_blank" action="question-1.html">
+                <button id="addbtn2" onclick="getInfo();" type="submit">Quarterly Survey</button>
+                </form> </p>
+            <p> <form method="get" target="_blank" action="question-1.html">
+                <button id="addbtn3" onclick="getTrans();" type="submit">Bi-Annual Survey</button>
+                </form> </p>
 
-        		<form action='' class='form' role='form' method='POST' novalidate=''><button class="submitButton" id="startSurvey" onclick="surveyStart('question-1.html');return false;">Start Survey</button></form>
+            <p> <form method="get" target="_blank" action="question-1.html">
+                <button id="addbtn4" onclick="getInfo2();" type="submit">Annual Survey</button>
+                </form> </p>
+                <script>function getInfo2()
+                {
+                  var sValidCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                  var sCharCode = "";
+                  var pDate = "09/11/2015";
+                  var lDate = "12/11/2015";
+                  var sID = "00002";
+
+                  for (i = 0; i < 16; i++) {
+                    sCharCode = sCharCode + sValidCharacters.charAt(parseInt(Math.random() * sValidCharacters.length));
+
+                    if ((i === 3) || (i === 7) || (i === 11)) {
+                      sCharCode = sCharCode + "-";
+                    }
+                  }
+                  document.getElementById('timecom').innerHTML='Annual Survey ID is ' + sID + "<br/>" + 'Live Date is ' + lDate + "<br/>" + 'Publish Date is: ' + pDate + "<br/>" + ' Survey Transaction ID is: ' + sCharCode;
+                }
+                </script>
+            <p><strong>COMPLETED SURVEYS:</strong></p>
+
+            <p id="mont"></p>
+            <p id="quart"></p>
+            <p id="para"></p>
+            <p id="timecom"></p>
+            <p id="trana"></p>
+
+
+        		<form action='' class='form' role='form' method='POST' novalidate=''>
+            <button class="submitButton" id="startSurvey" onclick="surveyStart('question-1.html');return false;">Start Survey</button></form>
         		<div class='lock u-mb-s u-mb-m@s'></div><br/>
 
        		 </div>
@@ -70,5 +161,6 @@
     </br></br>
     </br></br>
     </br></br>
+
   	</body>
 </html>
