@@ -73,6 +73,10 @@
         }
       }
       document.getElementById('mont').innerHTML='Monthly Survey ID is ' + sID + "<br/>" + 'Live Date is ' + lDate + "<br/>" + 'Publish Date is: ' + pDate + "<br/>" + ' Survey Transaction ID is: ' + sCharCode;
+      sessionStorage.setItem("surveyid", sID);
+      sessionStorage.setItem("livedate", lDate);
+      sessionStorage.setItem("pubdate", pDate);
+      sessionStorage.setItem("transid", sCharCode);
     }
     </script>
   </head>
@@ -109,8 +113,8 @@
             <h3 class='saturn'>Surveys</h2>
             <p class='mars'>Click one of the links below to start survey.</p><p class='mars'>
             <p><strong>TO DO:</strong></p>
-            <p> <form method="post" target="_blank" action="landingDevPage.html">
-                <button id="addbtn" onclick="getMonth();" type="submit">Monthly Survey</button>
+            <p> <form method="GET" target="_blank" action="landingDevPage.html">
+                <button id="addbtn" onclick="getMonth();" value="timecom" type="submit">Monthly Survey</button>
                 </form> </p>
             <p> <form method="get" target="_blank" action="question-1.html">
                 <button id="addbtn2" onclick="getInfo();" type="submit">Quarterly Survey</button>
@@ -122,6 +126,7 @@
             <p> <form method="get" target="_blank" action="question-1.html">
                 <button id="addbtn4" onclick="getInfo2();" type="submit">Annual Survey</button>
                 </form> </p>
+
                 <script>function getInfo2()
                 {
                   var sValidCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -140,6 +145,7 @@
                   document.getElementById('timecom').innerHTML='Annual Survey ID is ' + sID + "<br/>" + 'Live Date is ' + lDate + "<br/>" + 'Publish Date is: ' + pDate + "<br/>" + ' Survey Transaction ID is: ' + sCharCode;
                 }
                 </script>
+
             <p><strong>COMPLETED SURVEYS:</strong></p>
 
             <p id="mont"></p>

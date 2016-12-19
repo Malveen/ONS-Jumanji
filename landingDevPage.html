@@ -112,22 +112,30 @@ select {
 
             <div class="field-container">
               <label for="survey_id">Survey ID</label>
-              <input id="survey_id" name="survey_id" type="text" value="" class="qa-survey-id" readonly>
+              <script>
+              document.write(sessionStorage.getItem("surveyid"));
+              </script>
             </div>
 
             <div class="field-container">
               <label for="livedate">Live Date</label>
-              <input id="livedate" name="livedate" type="text" value="" class="qa-livedate">
+              <script>
+              document.write(sessionStorage.getItem("livedate"));
+              </script>
             </div>
 
             <div class="field-container">
               <label for="publish_date">Publish Date</label>
-              <input id="publish_date" name="publish_date" type="text" value="" class="qa-publish-date">
+              <script>
+              document.write(sessionStorage.getItem("pubdate"));
+              </script>
             </div>
 
             <div class="field-container">
               <label for="trans_id">Survey Transaction ID</label>
-              <input id="trans_id" name="trans_id" type="text" value="" class="qa-trans-id">
+              <script>
+              document.write(sessionStorage.getItem("transid"));
+              </script>
             </div>
 
         </div>
@@ -162,8 +170,6 @@ select {
   }
 
 </script>
-
-
 
     </div>
 
