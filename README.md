@@ -16,8 +16,8 @@ To access on command line:
   
   -----------------------------
   
-  command to push deleted files:
+  Command to push deleted files:
   
   git ls-files --deleted -z | xargs -0 git rm
   
-  Then commit and push
+  Then commit and push as usual
