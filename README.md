@@ -14,6 +14,8 @@ To access on command line:
   
   git push -u origin
   
+  -----------------------------
+  
   command to push deleted files:
   
   git ls-files --deleted -z | xargs -0 git rm
