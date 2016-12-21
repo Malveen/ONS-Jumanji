@@ -1,0 +1,17 @@
+Liferay.on(
+    'allPortletsReady',function() {
+	//Primefaces paginators
+	paginator = AUI().one('.ui-paginator');
+	if(paginator != null) {
+		paginator.delegate('click',function() {Liferay.Session.extend();}, 'span:not(.ui-state-disabled).ui-state-default,.ui-paginator-pages');
+	}
+	//Links and buttons and sortable headers
+	AUI().one('#content').delegate('click',function() {Liferay.Session.extend();},'button,input[type="button"],input[type="button"],input[type="checkbox"],a,th.ui-sortable-column,.ui-radiobutton-icon');
+
+	//Texts
+	AUI().one('#content').delegate('blur',function() {Liferay.Session.extend();},'input[type="text"],input[type="password"],textarea');
+
+	//Selects
+	AUI().one('#content').delegate('change',function() {Liferay.Session.extend();},'select');
+
+});

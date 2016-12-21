@@ -1,0 +1,13 @@
+function messageInteraction() {
+	$(document).ready(function(e) {
+		if ($('.ui-messages').length > 0){
+			$('div#eQ-question-content input, div#eQ-question-content select, div#eQ-question-content textarea').on("click keypress",function() {
+				$('.ui-messages').fadeOut();
+			});
+		}
+	});
+}
+
+function titleExpansion() {
+	$('a[target="_blank"]').prop('title', 'This opens a new window');
+}

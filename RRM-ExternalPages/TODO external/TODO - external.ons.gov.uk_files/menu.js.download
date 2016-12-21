@@ -1,0 +1,28 @@
+AUI().ready(function(e) {
+	AUI().all('#nav li a.parent-item').each( 
+			function(node) {
+				node.on('click', function(e) {
+					if(node.ancestor('li').all('ul.submenu').size() > 0) {	
+						var isHidden = node.get('parentNode').one('.submenu').getStyle('display') === 'none';
+						if(isHidden) {
+							node.get('parentNode').one('.submenu').setStyle('display','block');
+						} else {
+							node.get('parentNode').one('.submenu').setStyle('display','none');
+						}
+						OpenSubmenu();
+						return false;
+					}	
+				});				
+			}	
+	);
+
+	function OpenSubmenu() {	
+		AUI().all('.submenu li a').each(function(node) {
+			if (node.hasClass('current')) {
+				node.get('parentNode').get('parentNode').setStyle('display', 'block');
+			}
+		});
+	}
+
+	OpenSubmenu();
+});
